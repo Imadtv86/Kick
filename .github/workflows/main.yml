@@ -18,6 +18,6 @@ jobs:
       - name: Start Streaming to YouTube
         env:
           YOUTUBE_STREAM_KEY: 0zru-1w0v-j4q5-46ck-eg6m  # Stream Key
-          M3U8_LINK: http://bdd78.4rouwanda-shop.store/live/1515000000/index.m3u8?t=Ms2wrAFNv7Cpg8TKe0W2RA&e=1736036448  # M3U8 Link
+          M3U8_LINK: http://het102a.4rouwanda-shop.store/live/1515000000/index.m3u8?t=ni1C1fv-zg2NedxZ3wkUWQ&e=1736035940  # M3U8 Link
         run: |
           ffmpeg -i $M3U8_LINK -f flv rtmp://a.rtmp.youtube.com/live2/$YOUTUBE_STREAM_KEY
