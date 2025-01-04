@@ -17,7 +17,7 @@ jobs:
 
       - name: Start Streaming to Facebook
         env:
-          FACEBOOK_STREAM_KEY: FB-122159174486313606-0-Ab0VqoZkBuBhqeyzPCYEPQ6L  # Facebook Stream Key
+          FACEBOOK_STREAM_KEY: FB-122159187800313606-0-Ab26JriiQi3iMRvycrffczSk  # Facebook Stream Key
           M3U8_LINK: http://het121a.4rouwanda-shop.store/live/1515000000/index.m3u8?t=P73t4V6MdNKo13IhOn0g_Q&e=1736037810  # M3U8 Link
         run: |
           ffmpeg -i $M3U8_LINK -f flv rtmp://live-api-s.facebook.com:80/rtmp/$FACEBOOK_STREAM_KEY
