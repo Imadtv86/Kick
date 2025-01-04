@@ -1,0 +1,23 @@
+name: Facebook Live Streaming
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  stream_to_facebook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up FFmpeg
+        run: sudo apt-get update && sudo apt-get install ffmpeg -y
+
+      - name: Start Streaming to Facebook
+        env:
+          FACEBOOK_STREAM_KEY: FB-122159174486313606-0-Ab0VqoZkBuBhqeyzPCYEPQ6L  # Facebook Stream Key
+          M3U8_LINK: http://het121a.4rouwanda-shop.store/live/1515000000/index.m3u8?t=P73t4V6MdNKo13IhOn0g_Q&e=1736037810  # M3U8 Link
+        run: |
+          ffmpeg -i $M3U8_LINK -f flv rtmp://live-api-s.facebook.com:80/rtmp/$FACEBOOK_STREAM_KEY
