@@ -1,0 +1,23 @@
+name: YouTube Live Streaming
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  stream_to_youtube:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up FFmpeg
+        run: sudo apt-get update && sudo apt-get install ffmpeg -y
+
+      - name: Start Streaming to YouTube
+        env:
+          YOUTUBE_STREAM_KEY: 0zru-1w0v-j4q5-46ck-eg6m  # YouTube Stream Key
+          M3U8_LINK: http://bdd78.4rouwanda-shop.store/live/918454578001/index.m3u8?t=lJmLNEjYKZEyg68ODTNByA&e=1736114012  # M3U8 Link
+        run: |
+          ffmpeg -i $M3U8_LINK -f flv rtmp://a.rtmp.youtube.com/live2/$YOUTUBE_STREAM_KEY
