@@ -18,6 +18,6 @@ jobs:
       - name: Start Streaming to YouTube
         env:
           YOUTUBE_STREAM_KEY: 0zru-1w0v-j4q5-46ck-eg6m  # YouTube Stream Key
-          M3U8_LINK: https://stream.kick.com/ivs/v1/196233775518/vh3NBAEh0nRE/2025/1/7/19/56/ZZVPDA3SH4g7/media/hls/master.m3u8  # M3U8 Link
+          M3U8_LINK: https://video-weaver.mad02.hls.live-video.net/v1/playlist/CsQFJshAJtHqVhMVUbL9Z2DDFtkveICSlr7p2WyW-9NCMF9cOjNZFC0lcSyt3DuIKUf3Q79nLJp7H9gWSTl-ddXMmbfWKqQqmHWh6hLjzHCo4eux4beYqjk53j-1xZfAQQS-eh-P4YMMxPpHLRdcm7PMXglpoJ3iwiWMTHLoHHbvQy1tH1pdSnJkM9IL_jF_uUt-tzE1hmXXUQd7wLiN0M2hP1KITYSV1geyMaaenn-db8NgRTate1-bDibBkSTx99h_PlaypXlemnU_7J3fz2dskIyAIsnNko8StSJLwt1Zl9APSey0aNQs3z-COmg1xU7sjUSE8Mam1NPJ7vW3SJwxdroB7uWSgaxMDiL8ZL6QR4IRsBN_jNQRidjwZip81f9vl-lyvDkxQoXqjRntTBs4qOYIn0nfsvNCKsey5l6bCyIsuBsxFgAWNZuoeotFKpZfh6i0MHYDRYoRbPFibZVppDAXybX7zv8AR7w4pkhk38KHmhWih0HoIUhVAZHgtNT4DvhKOx8XBw4q-tbV09NJikpQZfB3PI-wC1RmPAsL6_fHJ3dpOmY0zkYL0GnOxHwXcSsY7MVWXsaa_On_6uo9iYepLVAx48uiQQrmKBAP0xngzxqCt23jQQ3fRkeEXFQf9rPf2du4okh7eA1eU_4nf690YxTa-Km45b34Fpu245pKnwcV2U3Nc4MQlUaDx6Rpo39GMsKeLhZlRKrJnuM2oSgQnD5mOC4uyDVyN4o31DOY86SmHpP-lqFi8RObUs4qiu6h2rHf4X188Qof9LdzHdz-VxMwl9JQLaAsFZke2xKd-EiPyvJ19f4lIfUDUo398oLFvf7RS9qyFYHslcPKEP3SR7h_Vy0647mp0jQiLjQGDVg6u8dgsIGCFmbtTKoZtPzaK___g7xZS6nFIM9nU-qnjYs4SvbLZRjuZe08oimharJOGgzbKmd7e3SXsbshrqkgASoJZXUtd2VzdC0yMKcL.m3u8  # M3U8 Link
         run: |
           ffmpeg -i $M3U8_LINK -f flv rtmp://a.rtmp.youtube.com/live2/$YOUTUBE_STREAM_KEY
